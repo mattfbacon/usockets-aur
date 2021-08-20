@@ -10,7 +10,7 @@ url="https://github.com/uNetworking/uSockets"
 license=('Apache')
 arch=('any')
 source=( "https://github.com/uNetworking/uSockets/archive/refs/tags/v${pkgver}.tar.gz" )
-md5sums=('SKIP')
+sha256sums=('1fdc5376e5ef9acf4fb673fcd5fd191da9b8d59a319e9ec7922872070a3dd21c')
 depends=( openssl )
 
 prepare() {
