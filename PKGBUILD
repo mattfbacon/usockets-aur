@@ -28,4 +28,4 @@ package() {
 	make VERSION=$pkgver DESTDIR="$pkgdir/" install
 }
 
-#vim: syntax=sh
+# vim: syntax=sh
