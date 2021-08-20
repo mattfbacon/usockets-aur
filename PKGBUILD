@@ -2,30 +2,29 @@
 
 pkgbase=usockets
 pkgname=usockets
-pkgver=0.6.0
+pkgver=0.7.1
 epoch=1
 pkgrel=1
 pkgdesc="Miniscule cross-platform eventing, networking & crypto for async applications"
 url="https://github.com/uNetworking/uSockets"
 license=('Apache')
 arch=('any')
-_commit='7683672d87067cd75b854f4e36b9820f4809a4be'
-source=( "https://github.com/uNetworking/uSockets/archive/${_commit}.tar.gz" )
-md5sums=('4b98fcca9965e73ba749ea3404e5614e')
+source=( "https://github.com/uNetworking/uSockets/archive/refs/tags/v${pkgver}.tar.gz" )
+md5sums=('SKIP')
 depends=( openssl )
 
 prepare() {
-	cd "uSockets-$_commit"
-	patch < ../../usockets-0.6.0-Makefile.patch		
+	cd "uSockets-$pkgver"
+	patch < ../../usockets-$pkgver-Makefile.patch
 }
 
 build() {
-	cd "uSockets-$_commit"
+	cd "uSockets-$pkgver"
 	make VERSION=$pkgver WITH_OPENSSL=1 default
 }
 
 package() {
-	cd "uSockets-$_commit"
+	cd "uSockets-$pkgver"
 	make VERSION=$pkgver DESTDIR="$pkgdir/" install
 }
 
